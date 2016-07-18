@@ -1,7 +1,8 @@
 - [x] start repo
 - [x] Step 1: GameWindow
-- [ ] Step 2: Scenes
-- [ ] Step 2: Player
+- [x] Add sprite resources
+- [x] Step 2: Scenes
+- [x] Step 2: Player
 - [ ] Step 3: Simple Level
 - [ ] Step 4: Level Editor
 - [ ] Step 5: Camera
