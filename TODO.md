@@ -3,7 +3,7 @@
 - [x] Add sprite resources
 - [x] Step 2: Scenes
 - [x] Step 2: Player
-- [ ] Step 3: Simple Level
+- [x] Step 3: Simple Level
 - [ ] Step 4: Level Editor
 - [ ] Step 5: Camera
 - [ ] Step 6: Fixes and Improvements
