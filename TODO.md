@@ -1,2 +1,10 @@
 - [x] start repo
-- [ ] next thing
+- [x] Step 1: GameWindow
+- [ ] Step 2: Scenes
+- [ ] Step 2: Player
+- [ ] Step 3: Simple Level
+- [ ] Step 4: Level Editor
+- [ ] Step 5: Camera
+- [ ] Step 6: Fixes and Improvements
+- [ ] Step 7: Diamonds
+- [ ] Step 8: Invulnerability, sounds and...
