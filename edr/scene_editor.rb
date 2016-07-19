@@ -1,19 +1,28 @@
+# Gem requires
 require 'gosu'
 
+# Editor class requires
+require 'edr/parser'
+
 class SceneEditor
-    DEFAULT_GRID_HEIGHT = 45
-    DEFAULT_GRID_WIDTH = 60
+    GRID_HEIGHT = 45
+    GRID_WIDTH = 60
 
     def initialize(window)
         @window = window
 
-        @level = []
-        (0...2).each do |layer|
-            @level[layer] = []
-            (0...DEFAULT_GRID_HEIGHT).each do |y|
-                @level[layer][y] = []
-                (0...DEFAULT_GRID_WIDTH).each do |x|
-                    @level[layer][y][x] = 0
+        if FileTest.exists?('res/cnf/layer0.csv') && FileTest.exists?('res/cnf/layer1.csv')
+            parser = Parser.new
+            @level = parser.parse_data(GRID_WIDTH, GRID_HEIGHT)
+        else
+            @level = []
+            (0...2).each do |l|
+                @level[l] = []
+                (0...GRID_HEIGHT).each do |y|
+                    @level[l][y] = []
+                    (0...GRID_WIDTH).each do |x|
+                        @level[l][y][x] = 0
+                    end
                 end
             end
         end
@@ -186,7 +195,7 @@ class SceneEditor
     end
 
     def save
-        file = File.new('dat/000.map', 'w+')
+        file = File.new('dat/001.map', 'w+')
         Marshal.dump(@tileset_used, file)
         Marshal.dump(@level, file)
         Marshal.dump(@objects, file)

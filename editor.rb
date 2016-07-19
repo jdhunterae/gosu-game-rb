@@ -5,10 +5,14 @@
 
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'gosu'
-require 'rubygems'
+# Gem requires
 
+# Editor Class requires
 require 'edr/editor_window'
 
-window = EditorWindow.new
-window.show
+def main
+    window = EditorWindow.new
+    window.show
+end
+
+main

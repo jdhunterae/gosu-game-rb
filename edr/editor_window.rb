@@ -1,17 +1,19 @@
+# Gem requires
 require 'gosu'
 
+# Editor class requires
 require 'edr/scene_editor'
 
-# Main game window
+# Main editor window
 class EditorWindow < Gosu::Window
-    DEFAULT_WIDTH = 1024
-    DEFAULT_HEIGHT = 768
-    DEFAULT_RESIZABLE = false
-    DEFAULT_TITLE = 'FuZeD: Map Editor'.freeze
+    WINDOW_WIDTH = 1024
+    WINDOW_HEIGHT = 768
+    WINDOW_RESIZABLE = false
+    WINDOW_TITLE = 'FuZeD: Map Editor'.freeze
 
     def initialize
-        super(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_RESIZABLE)
-        self.caption = DEFAULT_TITLE
+        super(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_RESIZABLE)
+        self.caption = WINDOW_TITLE
 
         @scene = SceneEditor.new(self)
     end

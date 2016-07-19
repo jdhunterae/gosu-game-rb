@@ -1,18 +1,19 @@
+# Gem requires
 require 'gosu'
 
+# Game Class requires
 require 'src/scene_map'
 
 # Main game window
 class GameWindow < Gosu::Window
-    DEFAULT_WIDTH = 640
-    DEFAULT_HEIGHT = 480
-    DEFAULT_RESIZABLE = false
-    DEFAULT_TITLE = 'FuZeD'.freeze
+    WINDOW_WIDTH = 640
+    WINDOW_HEIGHT = 480
+    WINDOW_RESIZABLE = false
+    WINDOW_TITLE = 'FuZeD'.freeze
 
     def initialize
-        super(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_RESIZABLE)
-        self.caption = DEFAULT_TITLE
-
+        super(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_RESIZABLE)
+        self.caption = WINDOW_TITLE
         @scene = SceneMap.new(self)
     end
 
