@@ -13,8 +13,8 @@ class SceneMap
 
     def update
         @player.update
-        @player.move_left if @window.button_down?(Gosu::KbLeft) && !wall?(@player.x, @player.y, :left)
         @player.move_right if @window.button_down?(Gosu::KbRight) && !wall?(@player.x, @player.y, :right)
+        @player.move_left if @window.button_down?(Gosu::KbLeft) && !wall?(@player.x, @player.y, :left)
         @player.fall if no_ground?(@player.x, @player.y)
         @player.reset_jump if @player.is_jumping? && solid_overhead?(@player.x, @player.y)
     end
@@ -35,7 +35,9 @@ class SceneMap
         end
     end
 
-    def button_up(id); end
+    def button_up(id)
+        @player.reset_jump if id == Gosu::KbUp
+    end
 
     def no_ground?(x, y)
         tile_x = (x / 16).to_i
